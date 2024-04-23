@@ -1,0 +1,41 @@
+- Create a User table:
+  - Fields:
+    - userid (Primary Key)
+    - username
+    - pwd
+
+- Create a Roles table:
+  - Fields:
+    - roleid (Primary Key)
+    - userid (Foreign Key)
+    - rolename
+
+- Create an Entity:
+  - User:
+    - Properties:
+      - userid
+      - username
+      - pwd
+
+  - Role:
+    - Properties:
+      - roleid
+      - userid
+      - rolename
+
+- Create a Repository:
+  - Methods:
+    - SaveUserDetails(user)
+    - SaveRoleDetails(role)
+
+- User Registration Component (React):
+  - Features:
+    - Registration form for users
+    - API call to permit all users to sign up
+    - Option to set admin or user access in the backend
+
+- APIs:
+  - SignUp: Permit all users
+  - Login: Permit all users
+  - DetailsAPI: Permit only admin user to access and edit
+  - MarksAPI: Permit only admin user to access and edit
