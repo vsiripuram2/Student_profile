@@ -1,0 +1,3 @@
+[submodule "student-service-backend"]
+	path = student-service-backend
+	url = https://github.com/vsiripuram2/Student_profile.git
