@@ -2,7 +2,6 @@ package com.practice.studentservice.controller;
 
 import com.practice.studentservice.model.StudentDetails;
 import com.practice.studentservice.model.StudentMarks;
-import com.practice.studentservice.response.StudentReportResponse;
 import com.practice.studentservice.service.StudentDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +27,5 @@ public class StudentDetailsController {
         studentDetailsService.saveStudentMarks(studentMarks);
     }
 
-//    @PostMapping("/getStudentMarks")
-//    public void getStudentMarks(@RequestParam Integer studentId) {
-//        studentDetailsService.getStudentMarks(studentId);
-//    }
+
 }

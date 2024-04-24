@@ -27,9 +27,6 @@ public class StudentMarks {
     @Column(name = "marks")
     private int marks;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="student_id",insertable = false,updatable = false)
-    @Fetch(FetchMode.JOIN)
-    private StudentDetails studentDetails;
+
 
 }

@@ -25,10 +25,6 @@ public class StudentDetails {
     @Column(name = "student_class")
     private String studentClass;
 
-    @OneToMany(targetEntity = StudentMarks.class,
-            mappedBy = "student_id",fetch = FetchType.LAZY,
-            orphanRemoval = false,cascade = {
-            CascadeType.PERSIST,CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
-    private List<StudentMarks> studentMarksList;
+
 
 }
