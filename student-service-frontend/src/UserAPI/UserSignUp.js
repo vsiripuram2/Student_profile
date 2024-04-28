@@ -34,47 +34,51 @@ const UserSignUp = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          User Name:{" "}
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="text"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Email:{" "}
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Roles:{" "}
-          <input
-            type="text"
-            name="roles"
-            value={formData.roles}
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <div className="form-container">
+    <form onSubmit={handleSubmit} className="form">
+      <div className="form-group">
+        <label htmlFor="username">User Name:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="roles">Roles:</label>
+        <input
+          type="text"
+          id="roles"
+          name="roles"
+          value={formData.roles}
+          onChange={handleChange}
+        />
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
   );
 };
 export default UserSignUp;

@@ -1,4 +1,5 @@
 import "./App.css";
+import Navbar from "./NavBar/Navbar";
 import PostStudentDetails from "./StudentAPI/PostStudentDetails";
 import PostStudentMarks from "./StudentAPI/PostStudentMarks";
 import UserSignUp from "./UserAPI/UserSignUp";
@@ -8,6 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <Navbar />
         <Routes>
           <Route path="/UserSignUp" element={<UserSignUp />} />
           <Route path="/PostStudentDetails" element={<PostStudentDetails />} />
