@@ -11,6 +11,9 @@ const Navbar = () => {
         <NavLink activeClassName={styles.activeLink} className={styles.navLink} to="/UserSignUp">
           Sign Up
         </NavLink>
+        <NavLink activeClassName={styles.activeLink} className={styles.navLink} to="/UserLogin">
+          Sign In
+        </NavLink>
         <NavLink activeClassName={styles.activeLink} className={styles.navLink} to="/PostStudentDetails">
           Student Form
         </NavLink>
