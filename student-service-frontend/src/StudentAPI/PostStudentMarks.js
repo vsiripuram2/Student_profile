@@ -22,7 +22,7 @@ const PostStudentMarks = () => {
     try {
       const response = await axios.post(
         BASE_API_URL + SAVE_MARKS_DETAILS_URL,
-        formData,AuthHeader()
+        formData,{headers: AuthHeader() }
       );
       console.log("Form data submitted successfully:", response);
     } catch (error) {
