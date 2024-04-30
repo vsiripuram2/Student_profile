@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import AuthHeader from "../Utils/AuthHeader";
+import ErrorPage from "../Utils/ErrorPage";
 
 const BASE_API_URL = "http://localhost:8181/student-api";
 const CREATE_STUDENT_DETAILS_URL = "/createStudentDetails";
+// const jwtToken = localStorage.getItem("jwtToken");
 
 const PostStudentDetails = () => {
   const [formData, setFormData] = useState({
@@ -17,17 +20,28 @@ const PostStudentDetails = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // const authHeader = ()=>{
+  //   if (jwtToken) {
+  //     return { Authorization: "Bearer " + jwtToken };
+  //   }else{
+  //     return {};
+  //   }
+  // }
+ 
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(formData + "after setting formdata");
+    console.log(AuthHeader(),"From UserLogin Component");
     try {
       const response = await axios.post(
         BASE_API_URL + CREATE_STUDENT_DETAILS_URL,
-        formData
+        formData,{headers: AuthHeader() }
       );
       console.log("Form data submitted successfully:", response);
     } catch (error) {
       console.error("Error submitting form data:", error);
+      return ErrorPage();
     }
   };
 

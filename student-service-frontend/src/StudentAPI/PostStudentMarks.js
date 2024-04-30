@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import ErrorPage from "../Utils/ErrorPage";
+import AuthHeader from "../Utils/AuthHeader";
 
 const BASE_API_URL = "http://localhost:8181/student-api";
 const SAVE_MARKS_DETAILS_URL = "/saveStudentMarks";
@@ -20,16 +22,18 @@ const PostStudentMarks = () => {
     try {
       const response = await axios.post(
         BASE_API_URL + SAVE_MARKS_DETAILS_URL,
-        formData
+        formData,AuthHeader()
       );
       console.log("Form data submitted successfully:", response);
     } catch (error) {
       console.error("Error submitting form data:", error);
+      return <ErrorPage />
     }
   };
 
   return (
-    <div className="form-container">
+   
+        <div className="form-container">
       <form onSubmit={handleSubmit} className="form">
         <div className="form-group">
           <label htmlFor="studentMarksId">StudentMarks Id:</label>
@@ -63,7 +67,8 @@ const PostStudentMarks = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
-    </div>
+      </div>    
+    
   );
 };
 

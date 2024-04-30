@@ -22,7 +22,11 @@ const UserLogin = () => {
          AUTHENTICATE_URL,
         formData
       );
-      console.log("Form data submitted successfully:", response);
+      console.log("response",response);
+      if(response.data){
+        localStorage.setItem("jwtToken",response.data)
+      }
+      console.log("Form data submitted successfully:", localStorage.getItem('jwtToken'));
     } catch (error) {
       console.error("Error submitting form data:", error);
     }
