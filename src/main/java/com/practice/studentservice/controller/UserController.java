@@ -24,6 +24,7 @@ public class UserController {
     public void createUser(@RequestBody User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRoles("ROLE_"+user.getRoles());
+        System.out.println("User"+user);
         userRepository.save(user);
     }
 
