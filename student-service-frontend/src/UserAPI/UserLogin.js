@@ -23,10 +23,10 @@ const UserLogin = () => {
         formData
       );
       console.log("response",response);
-      if(response.data){
-        localStorage.setItem("jwtToken",response.data)
+      if(response.data && response.data.accessToken){
+        localStorage.setItem("userresponse",JSON.stringify(response.data))
       }
-      console.log("Form data submitted successfully:", localStorage.getItem('jwtToken'));
+      console.log("Form data submitted successfully:", localStorage.getItem('userresponse'));
     } catch (error) {
       console.error("Error submitting form data:", error);
     }
